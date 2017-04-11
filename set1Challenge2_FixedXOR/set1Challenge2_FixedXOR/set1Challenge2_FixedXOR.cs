@@ -22,35 +22,5 @@ namespace set1Challenge2_FixedXOR
         {
 
         }
-
-        /// <summary>
-        /// Decodes hexadecimal strings into a byte array
-        /// </summary>
-        /// <param name="hexValue"></param>
-        /// <returns>byte array</returns>
-        public byte[] hexDecoder(string hexValue)
-        {
-            string[] twoDigitHexValueSeperation = new string[(hexValue.Length / 2)];
-            byte[] hexToByteConversion = new byte[twoDigitHexValueSeperation.Length];
-            int index = 0;
-
-            // seperate hex values into pairs 
-            for (int i = 0; i < hexValue.Length; i++)
-            {
-                if (0 == i % 2)
-                {
-                    twoDigitHexValueSeperation[index] = hexValue.ElementAt(i).ToString() + hexValue.ElementAt(i + 1).ToString();
-                    index++;
-                }
-            }
-
-            // convert hex pairs into bytes
-            for (int i = 0; i < hexToByteConversion.Length; i++)
-            {
-                hexToByteConversion[i] = Convert.ToByte(Convert.ToInt32(twoDigitHexValueSeperation[i], 16));
-            }
-
-            return hexToByteConversion;
-        }
     }
 }
