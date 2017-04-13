@@ -9,7 +9,7 @@ namespace set1Challenge2_FixedXOR
     class HexConverter
     {
         private string hexdecimal;
-        private string base64; 
+        private string base64;
         private string[] twoDigitHexValueSeperation;
         private byte[] byteConversion;
         private int index = 0;
@@ -23,11 +23,13 @@ namespace set1Challenge2_FixedXOR
         {
             separateHexValuesIntoPairs();
             hexToByteConversion();
+            base64 = Convert.ToBase64String(byteConversion);
             return base64;
         }
 
         private void separateHexValuesIntoPairs()
         {
+            twoDigitHexValueSeperation = new string[hexdecimal.Length / 2];
             int index = 0;
 
             // seperate hex values into pairs 
@@ -50,8 +52,6 @@ namespace set1Challenge2_FixedXOR
             {
                 byteConversion[i] = Convert.ToByte(Convert.ToInt32(twoDigitHexValueSeperation[i], 16));
             }
-
-            base64 = Convert.ToBase64String(byteConversion);
         }
     }
 }

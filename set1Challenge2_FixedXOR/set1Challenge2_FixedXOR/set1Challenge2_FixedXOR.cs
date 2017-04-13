@@ -20,6 +20,8 @@ namespace set1Challenge2_FixedXOR
     {
         static void Main(string[] args)
         {
+            HexConverter hex = new HexConverter("49276d206b696c6c696e6720796f757220627261696e206c696b65206120706f69736f6e6f7573206d757368726f6f6d");
+            Console.WriteLine(hex.getBase64());
 
         }
     }
