@@ -105,7 +105,7 @@ namespace set1Challenge2_FixedXOR
         public string xOrEncoding(string _xOrHex1, string _xOrHex2)
         {
             // Ensure that both hex string are equal in length
-            if(_xOrHex1.Length != xOrHex2.Length)
+            if(_xOrHex1.Length != _xOrHex2.Length)
             {
                 return "Both hex strings need to be equal-length";
             }
@@ -133,7 +133,13 @@ namespace set1Challenge2_FixedXOR
             }
         }
 
-        
+        /// <summary>
+        /// Performs all the XOR encoding on the byte array hex pair
+        /// values. 
+        /// </summary>
+        /// <param name="hex1">byte array of hex value pairs</param>
+        /// <param name="hex2">byte array of hex value pairs</param>
+        /// <returns>XOR encoded string</returns>
         private string xOrEncodeCalc(byte[] hex1, byte[] hex2)
         {
             string[] byte1 = new string[hex1.Length];
