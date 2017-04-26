@@ -6,40 +6,67 @@ using System.Threading.Tasks;
 
 namespace set1Challenge2_FixedXOR
 {
+    /// <summary>
+    /// Author: Steven Chavez
+    /// Date: 4/25/2017
+    /// File: HexConverter.cs
+    /// Version: 1.0
+    /// 
+    /// Handles convertions of hexadecimal values. Plus some
+    /// encoding of hexadecimal values.
+    /// </summary>
     class HexConverter
     {
-        private string hexdecimal;
+        private string hexadecimal;
         private string xOrEncodingHex;
         private string base64;
         private string[] twoDigitHexValueSeperation;
         private byte[] byteConversion;
 
-        public HexConverter(string _hexdecimal)
+        /// <summary>
+        /// Defualt constructor. 
+        /// </summary>
+        public HexConverter()
         {
-            hexdecimal = _hexdecimal;
-            twoDigitHexValueSeperation = separateHexValueIntoPairs(hexdecimal);
+            hexadecimal = "";
+        }
+
+        /// <summary>
+        /// Overloaded Constructor.
+        /// </summary>
+        /// <param name="_hexdecimal">Assigns hexadecimal value</param>
+        public HexConverter(string _hexadecimal)
+        {
+            hexadecimal = _hexadecimal;
+            twoDigitHexValueSeperation = separateHexValueIntoPairs(hexadecimal);
             byteConversion = hexToByteConversion(twoDigitHexValueSeperation);
         }
 
+        /// <summary>
+        /// Get Base64 value of a hexadecimal value
+        /// </summary>
+        /// <returns>base64</returns>
         public string getBase64()
         {
             base64 = Convert.ToBase64String(byteConversion);
             return base64;
         }
 
-        public byte[] getByteArray()
-        {
-            return byteConversion;
-        }
-
+        /// <summary>
+        /// Seperate hexadecimal string into an array by pairs.
+        /// Making the hexadecimal value easy to do work on.
+        /// </summary>
+        /// <param name="hex">Hexadecimal string to be seperated</param>
+        /// <returns>Paired hexadecimal array</returns>
         private string[] separateHexValueIntoPairs(string hex)
         {
             string[] hexValueSeperation = new string[hex.Length / 2];
             int index = 0;
 
-            // seperate hex values into pairs 
+            // Seperate hex values into pairs.
             for (int i = 0; i < hex.Length; i++)
             {
+                // Allows for pulling of pairs from even indices
                 if (0 == i % 2)
                 {
                     hexValueSeperation[index] = hex.ElementAt(i).ToString() 
@@ -65,7 +92,7 @@ namespace set1Challenge2_FixedXOR
         
         public string xOrEncoding(string _xOrEncodingHex)
         {
-            if(_xOrEncodingHex.Length != hexdecimal.Length)
+            if(_xOrEncodingHex.Length != hexadecimal.Length)
             {
                 return "Both hex strings need to be equal-length";
             }
@@ -75,8 +102,8 @@ namespace set1Challenge2_FixedXOR
                 xOrEncodingHex = _xOrEncodingHex;
 
                 // function value holding varibles 
-                byte[] hex1 = new byte[hexdecimal.Length];
-                byte[] hex2 = new byte[hexdecimal.Length];
+                byte[] hex1 = new byte[hexadecimal.Length];
+                byte[] hex2 = new byte[hexadecimal.Length];
                 string results;
 
                 hex1 = byteConversion;
