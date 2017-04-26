@@ -18,7 +18,8 @@ namespace set1Challenge2_FixedXOR
     class HexConverter
     {
         private string hexadecimal;
-        private string xOrEncodingHex;
+        private string xOrHex1;
+        private string xOrHex2;
         private string base64;
         private string[] twoDigitHexValueSeperation;
         private byte[] byteConversion;
@@ -95,33 +96,45 @@ namespace set1Challenge2_FixedXOR
             return conversion;
         }
 
-        
-        public string xOrEncoding(string _xOrEncodingHex)
+        /// <summary>
+        /// Takes equal length hex strings and encodes using XOR
+        /// </summary>
+        /// <param name="_xOrHex1">hexadecimal string</param>
+        /// <param name="_xOrHex2">hexadecimal string</param>
+        /// <returns>XOR hexadecimal encoded value</returns>
+        public string xOrEncoding(string _xOrHex1, string _xOrHex2)
         {
-            if(_xOrEncodingHex.Length != hexadecimal.Length)
+            // Ensure that both hex string are equal in length
+            if(_xOrHex1.Length != xOrHex2.Length)
             {
                 return "Both hex strings need to be equal-length";
             }
             else
             {
-                // declare variable
-                xOrEncodingHex = _xOrEncodingHex;
+                // Declare variable.
+                xOrHex1 = _xOrHex1;
+                xOrHex2 = _xOrHex2;
 
-                // function value holding varibles 
+                // Function value holding varibles.
                 byte[] hex1 = new byte[hexadecimal.Length];
                 byte[] hex2 = new byte[hexadecimal.Length];
                 string results;
 
-                hex1 = byteConversion;
-                twoDigitHexValueSeperation = separateHexValueIntoPairs(xOrEncodingHex);
+                // Seperate hex values into pairs and then convert to byte array.
+                twoDigitHexValueSeperation = separateHexValueIntoPairs(xOrHex1);
+                hex1 = hexToByteConversion(twoDigitHexValueSeperation);
+                twoDigitHexValueSeperation = separateHexValueIntoPairs(xOrHex2);
                 hex2 = hexToByteConversion(twoDigitHexValueSeperation);
 
-                results = produceXOrCombination(hex1, hex2);
+                // Get encoded XOR string
+                results = xOrEncodeCalc(hex1, hex2);
+
                 return results;
             }
         }
 
-        private string produceXOrCombination(byte[] hex1, byte[] hex2)
+        
+        private string xOrEncodeCalc(byte[] hex1, byte[] hex2)
         {
             string[] byte1 = new string[hex1.Length];
             string[] byte2 = new string[hex2.Length];
