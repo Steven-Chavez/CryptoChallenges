@@ -12,7 +12,7 @@ namespace set1Challenge2_FixedXOR
     /// File: HexConverter.cs
     /// Version: 1.0
     /// 
-    /// Handles convertions of hexadecimal values. Plus some
+    /// Handles convertions of hexadecimal values. Plus
     /// encoding of hexadecimal values.
     /// </summary>
     class HexConverter
