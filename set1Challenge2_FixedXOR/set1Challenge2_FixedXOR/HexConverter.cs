@@ -77,6 +77,12 @@ namespace set1Challenge2_FixedXOR
             return hexValueSeperation;
         }
 
+        /// <summary>
+        /// Converts paired hex array values into a byte array. Working
+        /// with the raw bytes makes converting and encoding easier.
+        /// </summary>
+        /// <param name="seperatedHex">Seperated hexadecimal string array</param>
+        /// <returns>Converted byte array</returns>
         private byte[] hexToByteConversion(string[] seperatedHex)
         {
             byte[] conversion = new byte[twoDigitHexValueSeperation.Length];
