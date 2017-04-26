@@ -20,11 +20,20 @@ namespace set1Challenge2_FixedXOR
     {
         static void Main(string[] args)
         {
-            HexConverter hex = new HexConverter("1c0111001f010100061a024b53535009181c");
-            byte[] byteHex = hex.getByteArray();
+            // Declare variable for hexadecimal values.
+            string hex1 = "1c0111001f010100061a024b53535009181c";
+            string hex2 = "686974207468652062756c6c277320657965";
+            string result = "";
 
-            string test = hex.xOrEncoding("686974207468652062756c6c277320657965");
-            Console.WriteLine(test);
+            // Create an object of the HexConverter class.
+            HexConverter hex = new HexConverter();
+
+            // Pass hex values to be XOR encoded.
+            result = hex.xOrEncoding(hex1, hex2);
+
+            // Display results. Class method should produce:
+            // 746865206b696420646f6e277420706c6179
+            Console.WriteLine(result);
         }
     }
 }
