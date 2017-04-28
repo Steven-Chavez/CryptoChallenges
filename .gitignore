@@ -249,3 +249,5 @@ set1Challenge1_FixedXOR/set1Challenge1_FixedXOR/Properties/AssemblyInfo.cs
 *.csproj
 set1Challenge2_FixedXOR/set1Challenge2_FixedXOR/App.config
 set1Challenge2_FixedXOR/set1Challenge2_FixedXOR/Properties/AssemblyInfo.cs
+set1Challenge3_XORCipher/set1Challenge3_XORCipher/Properties/AssemblyInfo.cs
+set1Challenge3_XORCipher/set1Challenge3_XORCipher/App.config
