@@ -7,7 +7,12 @@ using System.Threading.Tasks;
 namespace set1Challenge3_XORCipher
 {
     /// <summary>
+    /// Author: Steven Chavez
+    /// Date: 4/27/2017
+    /// File: Program.cs
     /// 
+    /// Set 1 challenge 3 of the crypto challenges.
+    /// http://cryptopals.com/sets/1/challenges/3
     /// </summary>
     class Program
     {
