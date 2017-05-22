@@ -30,7 +30,11 @@ namespace set1Challenge3_XORCipher
         /// with the percentage of the frequency that 
         /// they are found in the English language.
         /// </summary>
-        string[,] englishLetterFrequency = new string[26,26];
+        string[] alphabet = new string[26]
+            {"A", "B", "C", "D", "E", "F", "G", "H",
+             "I", "J", "K", "L", "M", "N", "O", "P",
+             "Q", "R", "S", "T", "U", "V", "W", "X",
+             "Y", "Z"};
 
     }
 }
