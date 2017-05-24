@@ -63,7 +63,17 @@ namespace set1Challenge3_XORCipher
         /// <param name="message">string</param>
         public EnglishTextScore(string message)
         {
+            // Remove spaces in string.
+            message = message.Replace(" ", String.Empty);
+            message = message.Replace(".", String.Empty);
+
+            // Get length of message without spaces.
+            charTotal = message.Length;
+
+            // Convert all letters to uppercase.
             this.message = message.ToUpper();
+            
+            // Call appropriate methods
             messageDissect();
             charCounter();
         }
