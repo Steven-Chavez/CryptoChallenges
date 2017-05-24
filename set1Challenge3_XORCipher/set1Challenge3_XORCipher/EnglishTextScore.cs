@@ -20,13 +20,13 @@ namespace set1Challenge3_XORCipher
     class EnglishTextScore
     {
         /// <summary>
-        /// Total letters in string. Used for percentage 
+        /// Total characters in string. Used for percentage 
         /// purposes.
         /// </summary>
-        private int letterTotal;
+        private int charTotal;
 
         /// <summary>
-        /// Contains each letter of the alphabet 
+        /// Contains each letter of the alphabet A-Z
         /// </summary>
         private string[] alphabet = new string[26]
             {"A", "B", "C", "D", "E", "F", "G", "H",
@@ -43,5 +43,12 @@ namespace set1Challenge3_XORCipher
              5.92, 7.31, 0.10, 0.69, 3.98, 2.61, 6.95,
              7.68, 1.82, 0.11, 6.02, 6.28, 9.10, 2.88,
              1.11, 2.09, 0.17, 2.11, 0.07};
+
+        /// <summary>
+        /// Contains the count of each char in message. 
+        /// Array corresponds with alphabet array. If 
+        /// alphabet[0] = 5 then there are 5 A's.  
+        /// </summary>
+        private int[] charCount = new int[26];
     }
 }
