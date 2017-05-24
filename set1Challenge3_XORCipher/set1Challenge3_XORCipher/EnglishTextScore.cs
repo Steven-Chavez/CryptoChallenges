@@ -26,6 +26,11 @@ namespace set1Challenge3_XORCipher
         private int charTotal;
 
         /// <summary>
+        /// Contains message to be scored.
+        /// </summary>
+        private string message;
+
+        /// <summary>
         /// Contains each letter of the alphabet A-Z
         /// </summary>
         private string[] alphabet = new string[26]
@@ -50,5 +55,15 @@ namespace set1Challenge3_XORCipher
         /// alphabet[0] = 5 then there are 5 A's.  
         /// </summary>
         private int[] charCount = new int[26];
+
+        /// <summary>
+        /// Default constructor for EnglishTextScore 
+        /// class. Takes in message as argument.
+        /// </summary>
+        /// <param name="message">string</param>
+        public EnglishTextScore(string message)
+        {
+            this.message = message;
+        }
     }
 }
