@@ -63,19 +63,26 @@ namespace set1Challenge3_XORCipher
         /// <param name="message">string</param>
         public EnglishTextScore(string message)
         {
-            this.message = message;
+            this.message = message.ToUpper();
             messageDissect();
+            charCounter();
         }
 
-
+        /// <summary>
+        /// Separates message into char array and sorts
+        /// array in alphabetical order. 
+        /// </summary>
         private void messageDissect()
         {
             // Convert message to char array and sort array
             // in order to make char counting more efficient.
             char[] charArray = message.ToCharArray();
             Array.Sort(charArray);
-            
-            
+        }
+
+        private void charCounter()
+        {
+             
         }
     }
 }
