@@ -18,6 +18,7 @@ namespace set1Challenge3_XORCipher
     {
         static void Main(string[] args)
         {
+            EnglishTextScore score = new EnglishTextScore("dkv joaj ojsdf oljasl kdjfl asndl fhjskld jff");
         }
     }
 }
