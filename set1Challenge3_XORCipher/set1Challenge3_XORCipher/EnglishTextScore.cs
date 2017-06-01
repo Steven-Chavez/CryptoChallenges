@@ -61,7 +61,7 @@ namespace set1Challenge3_XORCipher
         /// to be tested against the English character 
         /// frequency. 
         /// </summary>
-        private double[] msgFrequency = new double[25];
+        private double[] msgFrequency = new double[26];
 
         /// <summary>
         /// Contains message split into chars.
@@ -80,6 +80,7 @@ namespace set1Challenge3_XORCipher
             // Call appropriate methods
             messageSort();
             charCounter();
+            messageFrequency();
         }
 
         /// <summary>
@@ -130,6 +131,18 @@ namespace set1Challenge3_XORCipher
                         index++;
                     }
                 }
+            }
+        }
+
+        /// <summary>
+        /// Calculates the frequency of each character in message.
+        /// </summary>
+        private void messageFrequency()
+        {
+            for(int i = 0; i < charCount.Length; i++)
+            {
+                msgFrequency[i] = (charCount[i] / (double)charTotal) * 100;
+                msgFrequency[i] = Math.Round(msgFrequency[i], 2);
             }
         }
     }
