@@ -57,6 +57,13 @@ namespace set1Challenge3_XORCipher
         private int[] charCount = new int[26];
 
         /// <summary>
+        /// Holds the frequency of characters in message
+        /// to be tested against the English character 
+        /// frequency. 
+        /// </summary>
+        private double[] msgFrequency = new double[25];
+
+        /// <summary>
         /// Contains message split into chars.
         /// </summary>
         private char[] messageSplit;
