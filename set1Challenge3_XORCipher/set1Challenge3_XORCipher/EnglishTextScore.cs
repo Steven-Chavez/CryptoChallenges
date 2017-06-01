@@ -33,11 +33,11 @@ namespace set1Challenge3_XORCipher
         /// <summary>
         /// Contains each letter of the alphabet A-Z
         /// </summary>
-        private string[] alphabet = new string[26]
-            {"A", "B", "C", "D", "E", "F", "G", "H",
-             "I", "J", "K", "L", "M", "N", "O", "P",
-             "Q", "R", "S", "T", "U", "V", "W", "X",
-             "Y", "Z"};
+        private char[] alphabet = new char[26]
+            {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
+             'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
+             'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X',
+             'Y', 'Z'};
 
         /// <summary>
         /// Contains each character frequency. In order
@@ -57,24 +57,21 @@ namespace set1Challenge3_XORCipher
         private int[] charCount = new int[26];
 
         /// <summary>
+        /// Contains message split into chars.
+        /// </summary>
+        private char[] messageSplit;
+
+        /// <summary>
         /// Default constructor for EnglishTextScore 
         /// class. Takes in message as argument.
         /// </summary>
         /// <param name="message">string</param>
         public EnglishTextScore(string message)
         {
-            // Remove spaces in string.
-            message = message.Replace(" ", String.Empty);
-            message = message.Replace(".", String.Empty);
-
-            // Get length of message without spaces.
-            charTotal = message.Length;
-
-            // Convert all letters to uppercase.
-            this.message = message.ToUpper();
+            this.message = message;
             
             // Call appropriate methods
-            messageDissect();
+            messageSort();
             charCounter();
         }
 
@@ -82,17 +79,51 @@ namespace set1Challenge3_XORCipher
         /// Separates message into char array and sorts
         /// array in alphabetical order. 
         /// </summary>
-        private void messageDissect()
+        private void messageSort()
         {
+            string tempMessage = "";
+            // Remove spaces in string.
+            tempMessage = message.Replace(" ", "");
+
+            // Get length of message without spaces.
+            charTotal = tempMessage.Length;
+
+            // Convert all letters to uppercase.
+            tempMessage = tempMessage.ToUpper();
+
             // Convert message to char array and sort array
             // in order to make char counting more efficient.
-            char[] charArray = message.ToCharArray();
-            Array.Sort(charArray);
+            messageSplit = tempMessage.ToCharArray();
+            Array.Sort(messageSplit);
         }
 
+        /// <summary>
+        /// Takes a count of each character in message.
+        /// </summary>
         private void charCounter()
         {
-             
+            int index = 0;
+
+            // Loop through each char in message.
+            for(int i = 0; i < charTotal; i++)
+            {
+                bool found = true;
+
+                // Must test every char against alphabet
+                // until a match is found.
+                while (found == true)
+                {
+                    if(messageSplit[i] == alphabet[index])
+                    {
+                        charCount[index]++;
+                        found = false;
+                    }
+                    else
+                    {
+                        index++;
+                    }
+                }
+            }
         }
     }
 }
