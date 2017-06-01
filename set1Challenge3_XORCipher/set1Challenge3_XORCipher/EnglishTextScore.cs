@@ -15,7 +15,9 @@ namespace set1Challenge3_XORCipher
     /// Scores a piece of English plain text. Used to 
     /// score how successful a decrypted message was. 
     /// The method used to score the English plain text 
-    /// is done by character frequency.
+    /// is done by character frequency. Lowest score out
+    /// of pool of decrypted messages is most likely to 
+    /// be the successful decryption.
     /// </summary>
     class EnglishTextScore
     {
@@ -29,6 +31,13 @@ namespace set1Challenge3_XORCipher
         /// Contains message to be scored.
         /// </summary>
         private string message;
+
+        /// <summary>
+        /// Contains score. Lowest score out of pool of
+        /// messages is most likely to be a successful
+        /// decryption. 
+        /// </summary>
+        private double score;
 
         /// <summary>
         /// Contains each letter of the alphabet A-Z
@@ -81,6 +90,17 @@ namespace set1Challenge3_XORCipher
             messageSort();
             charCounter();
             messageFrequency();
+            scoreMessage();
+        }
+
+        /// <summary>
+        /// Get score of messages likeliness of being
+        /// a successful decrypt. 
+        /// </summary>
+        /// <returns>double</returns>
+        public double getScore()
+        {
+            return score;
         }
 
         /// <summary>
@@ -90,8 +110,11 @@ namespace set1Challenge3_XORCipher
         private void messageSort()
         {
             string tempMessage = "";
+
             // Remove spaces in string.
             tempMessage = message.Replace(" ", "");
+
+            tempMessage = tempMessage.Replace(".", "");
 
             // Get length of message without spaces.
             charTotal = tempMessage.Length;
@@ -144,6 +167,22 @@ namespace set1Challenge3_XORCipher
                 msgFrequency[i] = (charCount[i] / (double)charTotal) * 100;
                 msgFrequency[i] = Math.Round(msgFrequency[i], 2);
             }
+        }
+
+        /// <summary>
+        /// scores message by acquiring the average of the difference 
+        /// between the two frequencies. 
+        /// </summary>
+        private void scoreMessage()
+        {
+            double[] difference = new double[26];
+
+            for (int i = 0; i < difference.Length; i++)
+            {
+                difference[i] = Math.Abs(frequency[i] - msgFrequency[i]);
+            }
+
+            score = difference.Average();
         }
     }
 }
