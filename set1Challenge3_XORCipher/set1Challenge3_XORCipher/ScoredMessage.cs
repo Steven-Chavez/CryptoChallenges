@@ -14,7 +14,7 @@ namespace set1Challenge3_XORCipher
     /// 
     /// Container for scored messages
     /// </summary>
-    class ScoredMessages
+    class ScoredMessage
     {
         /// <summary>
         /// Contains key used to decode message.
@@ -30,5 +30,18 @@ namespace set1Challenge3_XORCipher
         /// Contains decoded message.
         /// </summary>
         private string message;
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="key">char</param>
+        /// <param name="score">double</param>
+        /// <param name="message">message</param>
+        public ScoredMessage(char key, double score, string message)
+        {
+            this.key = key;
+            this.score = score;
+            this.message = message;
+        }
     }
 }
