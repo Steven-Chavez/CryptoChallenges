@@ -16,5 +16,19 @@ namespace set1Challenge3_XORCipher
     /// </summary>
     class ScoredMessages
     {
+        /// <summary>
+        /// Contains key used to decode message.
+        /// </summary>
+        private char key;
+
+        /// <summary>
+        /// Contains score of decoded message.
+        /// </summary>
+        private double score;
+
+        /// <summary>
+        /// Contains decoded message.
+        /// </summary>
+        private string message;
     }
 }
