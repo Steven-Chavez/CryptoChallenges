@@ -15,15 +15,23 @@ namespace set1Challenge3_XORCipher
     /// Discovers the single character key by running 
     /// an array of characters against an XOR'd hex 
     /// encoded string. Each result is scored, displaying 
-    /// the top three most likely keys and their messages. 
+    /// the top five most likely keys and their messages. 
     /// </summary>
     class DiscoverSingleCharacterKey
     {
+        /// <summary>
+        /// Contains XOR encoded hex string
+        /// </summary>
+        private string message;
+
+        
+
+
         // take in hex encoded string
         // loop
-            // run one character against encoded string at a time
-                // decode using raw bytes
-            // score decoded message
-        // Display top three 
+        // run one character (97-122) against encoded string at a time
+        // decode using raw bytes
+        // score decoded message
+        // Display top five 
     }
 }
