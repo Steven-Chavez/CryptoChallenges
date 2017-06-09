@@ -24,9 +24,6 @@ namespace set1Challenge3_XORCipher
         /// </summary>
         private string message;
 
-        
-
-
         // take in hex encoded string
         // loop
         // run one character (97-122) against encoded string at a time
