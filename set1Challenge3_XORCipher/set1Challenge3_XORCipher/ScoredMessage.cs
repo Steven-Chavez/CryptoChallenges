@@ -39,9 +39,58 @@ namespace set1Challenge3_XORCipher
         /// <param name="message">message</param>
         public ScoredMessage(char key, double score, string message)
         {
-            this.key = key;
-            this.score = score;
-            this.message = message;
+            Key = key;
+            Score = score;
+            Message = message;
         }
+
+        /// <summary>
+        /// Property for key field
+        /// </summary>
+        public char Key
+        {
+            get
+            {
+                return key;
+            }
+
+            set
+            {
+                key = value;
+            }
+        }
+
+        /// <summary>
+        /// Property for score field
+        /// </summary>
+        public double Score
+        {
+            get
+            {
+                return score;
+            }
+
+            set
+            {
+                score = value;
+            }
+        }
+
+        /// <summary>
+        /// Property for message field.
+        /// </summary>
+        public string Message
+        {
+            get
+            {
+                return message;
+            }
+
+            set
+            {
+                message = value;
+            }
+        }
+
     }
 }
