@@ -23,6 +23,10 @@ namespace set1Challenge3_XORCipher
         /// Contains XOR encoded hex string
         /// </summary>
         private string message;
+        /// <summary>
+        /// Contains array of hex pairs
+        /// </summary>
+        private string[] twoDigitHexValueSeperation;
 
         /// <summary>
         /// Default constructor for DiscoverSingleCharacterKey
