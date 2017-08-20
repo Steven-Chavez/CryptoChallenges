@@ -33,12 +33,37 @@ namespace set1Challenge3_XORCipher
         {
             this.message = message;
         }
+
         // loop
         // run one character (97-122) against encoded string at a time
         // decode using raw bytes
         // score decoded message
         // Display top five
 
+        /// <summary>
+        /// Separate hexadecimal string into an array by pairs.
+        /// Making the hexadecimal value easy to do work on.
+        /// </summary>
+        /// <param name="hex">Hexadecimal string to be separated</param>
+        /// <returns>Paired hexadecimal array</returns>
+        private string[] separateHexValueIntoPairs(string hex)
+        {
+            string[] hexValueSeperation = new string[hex.Length / 2];
+            int index = 0;
+
+            // Separate hex values into pairs.
+            for (int i = 0; i < hex.Length; i++)
+            {
+                // Allows for pulling of pairs from even indices
+                if (0 == i % 2)
+                {
+                    hexValueSeperation[index] = hex.ElementAt(i).ToString()
+                        + hex.ElementAt(i + 1).ToString();
+                    index++;
+                }
+            }
+            return hexValueSeperation;
+        }
 
     }
 }
