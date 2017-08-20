@@ -13,7 +13,7 @@ namespace set1Challenge3_XORCipher
     /// Version: 1.0
     /// 
     /// Scores a piece of English plain text. Used to 
-    /// score how successful a decrypted message was. 
+    /// score how successful a decrypted message is. 
     /// The method used to score the English plain text 
     /// is done by character frequency. Lowest score out
     /// of pool of decrypted messages is most likely to 
