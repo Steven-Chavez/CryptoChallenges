@@ -24,11 +24,21 @@ namespace set1Challenge3_XORCipher
         /// </summary>
         private string message;
 
-        // take in hex encoded string
+        /// <summary>
+        /// Default constructor for DiscoverSingleCharacterKey
+        /// class. Takes in message as argument.
+        /// </summary>
+        /// <param name="message"></param>
+        public DiscoverSingleCharacterKey(string message)
+        {
+            this.message = message;
+        }
         // loop
         // run one character (97-122) against encoded string at a time
         // decode using raw bytes
         // score decoded message
-        // Display top five 
+        // Display top five
+
+
     }
 }
