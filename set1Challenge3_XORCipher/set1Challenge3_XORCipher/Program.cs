@@ -18,7 +18,9 @@ namespace set1Challenge3_XORCipher
     {
         static void Main(string[] args)
         {
-            EnglishTextScore score = new EnglishTextScore("dkv joaj ojsdf oljasl kdjfl asndl fhjskld jff");
+            string test = "Scores a piece of English plain text. Used to score how successful a decrypted message was. " +
+                          "The method used to score the English plain text is done by character frequency.";
+            EnglishTextScore score = new EnglishTextScore(test);
         }
     }
 }
