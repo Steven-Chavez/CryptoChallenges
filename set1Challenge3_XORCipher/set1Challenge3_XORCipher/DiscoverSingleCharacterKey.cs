@@ -70,5 +70,12 @@ namespace set1Challenge3_XORCipher
             return hexValueSeperation;
         }
 
+        /// <summary>
+        /// decipher message using alphabet and XOR logic
+        /// </summary>
+        private void decipherMsgXOR()
+        {
+
+        }
     }
 }
