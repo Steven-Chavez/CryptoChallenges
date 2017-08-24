@@ -36,6 +36,7 @@ namespace set1Challenge3_XORCipher
         public DiscoverSingleCharacterKey(string message)
         {
             this.message = message;
+            separateHexValueIntoPairs(message);
         }
 
         // loop
