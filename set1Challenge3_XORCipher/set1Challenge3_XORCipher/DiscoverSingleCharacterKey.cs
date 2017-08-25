@@ -92,24 +92,15 @@ namespace set1Challenge3_XORCipher
         /// </summary>
         private void decipherMsgXOR()
         {
-            string hexRawByte = "";
             string letterRawByte = "";
-            
+            int index = 0;
             // loop through each char in alphabet 
             foreach(char c in alphabet)
             {
                 // Convert char to raw byte.
                 letterRawByte = charToRawByte(c);
 
-                // loop through each hexPair and decode message with single
-                // char from alphabet.
-                foreach(string hexPair in twoDigitHexValueSeperation)
-                {
-                    // Convert hexPair into raw byte
-                    hexRawByte = hexToRawByte(hexPair);
-
-
-                }
+                scoredMessages[index] = decodeXORMessage(letterRawByte);
             }
         }
 
@@ -145,6 +136,27 @@ namespace set1Challenge3_XORCipher
             string hex = String.Format("{0:X}", test);
             // Convert hex value to raw byte and return
             return hexToRawByte(hex);
+        }
+
+        private ScoredMessage decodeXORMessage(string letterRawByte)
+        {
+            string hexRawByte = "";
+
+            // loop through each hexPair and decode message with single
+            // char from alphabet.
+            foreach (string hexPair in twoDigitHexValueSeperation)
+            {
+                // Convert hexPair into raw byte
+                hexRawByte = hexToRawByte(hexPair);
+
+                for(int i = 0; i < 8; i++)
+                {
+
+                }
+
+            }
+
+            return;
         }
     }
 }
