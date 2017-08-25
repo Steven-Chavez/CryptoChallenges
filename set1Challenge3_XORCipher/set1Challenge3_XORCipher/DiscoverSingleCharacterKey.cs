@@ -37,6 +37,7 @@ namespace set1Challenge3_XORCipher
         {
             this.message = message;
             twoDigitHexValueSeperation = separateHexValueIntoPairs(message);
+            decipherMsgXOR();
         }
 
         // loop
@@ -75,7 +76,22 @@ namespace set1Challenge3_XORCipher
         /// </summary>
         private void decipherMsgXOR()
         {
+            byte[] conversion = new byte[twoDigitHexValueSeperation.Length];
+            
+            foreach(string value in twoDigitHexValueSeperation)
+            {
 
+            }
+        }
+
+        /// <summary>
+        /// Takes hex value, converts into raw byte for encoding.
+        /// </summary>
+        /// <param name="hexPair">hexadecimal pair value</param>
+        /// <returns>string of raw byte</returns>
+        private string hexToRawByte(string hexPair)
+        {
+            return "";
         }
     }
 }
