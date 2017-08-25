@@ -28,6 +28,10 @@ namespace set1Challenge3_XORCipher
         /// </summary>
         private string[] twoDigitHexValueSeperation;
         /// <summary>
+        /// Scores each decoded message
+        /// </summary>
+        private EnglishTextScore score;
+        /// <summary>
         /// Contains each letter of the alphabet A-Z
         /// </summary>
         private char[] alphabet = new char[26]
