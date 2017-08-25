@@ -93,12 +93,13 @@ namespace set1Challenge3_XORCipher
         private void decipherMsgXOR()
         {
             byte[] conversion = new byte[twoDigitHexValueSeperation.Length];
+            string letter = "";
             
             // loop through each char in alphabet 
             foreach(char c in alphabet)
             {
                 // Convert char to raw byte.
-                
+                letter = charToRawByte(c);
 
                 // loop through each hexPair and decode message with single
                 // char from alphabet.
