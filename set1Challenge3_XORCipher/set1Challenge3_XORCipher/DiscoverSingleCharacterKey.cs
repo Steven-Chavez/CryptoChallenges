@@ -97,6 +97,9 @@ namespace set1Challenge3_XORCipher
             // loop through each char in alphabet 
             foreach(char c in alphabet)
             {
+                // Convert char to raw byte.
+                
+
                 // loop through each hexPair and decode message with single
                 // char from alphabet.
                 foreach(string hexPair in twoDigitHexValueSeperation)
@@ -116,6 +119,15 @@ namespace set1Challenge3_XORCipher
             byte conversion = Convert.ToByte(Convert.ToInt32(hexPair, 16));
             string rawByte = Convert.ToString(conversion, 2);
             return rawByte;
+        }
+
+        {
+            // Convert letter to int
+            int test = Convert.ToInt32(letter);
+            // Convert int to hex
+            string hex = String.Format("{0:X}", test);
+            // Convert hex value to raw byte and return
+            return hexToRawByte(hex);
         }
     }
 }
