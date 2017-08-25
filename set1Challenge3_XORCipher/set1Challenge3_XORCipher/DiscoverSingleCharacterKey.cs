@@ -91,7 +91,9 @@ namespace set1Challenge3_XORCipher
         /// <returns>string of raw byte</returns>
         private string hexToRawByte(string hexPair)
         {
-            return "";
+            byte conversion = Convert.ToByte(Convert.ToInt32(hexPair, 16));
+            string rawByte = Convert.ToString(conversion, 2);
+            return rawByte;
         }
     }
 }
