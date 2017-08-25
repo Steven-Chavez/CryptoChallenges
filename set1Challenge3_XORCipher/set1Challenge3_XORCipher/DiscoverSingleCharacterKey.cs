@@ -100,6 +100,7 @@ namespace set1Challenge3_XORCipher
                 // Convert char to raw byte.
                 letterRawByte = charToRawByte(c);
 
+                // Decode the message by each letter
                 scoredMessages[index] = decodeXORMessage(letterRawByte);
             }
         }
@@ -141,6 +142,8 @@ namespace set1Challenge3_XORCipher
         private ScoredMessage decodeXORMessage(string letterRawByte)
         {
             string hexRawByte = "";
+            string[] decodedByte = new string[8];
+            string decodedMessage = "";
 
             // loop through each hexPair and decode message with single
             // char from alphabet.
@@ -151,7 +154,21 @@ namespace set1Challenge3_XORCipher
 
                 for(int i = 0; i < 8; i++)
                 {
-
+                    if (hexRawByte.ElementAt(i) == '1')
+                    {
+                        if (letterRawByte.ElementAt(i) == '1')
+                        {
+                            decodedByte[i] += "0";
+                        }
+                        else
+                        {
+                            decodedByte[i] += "1";
+                        }
+                    }
+                    else
+                    {
+                        decodedByte[i] += letterRawByte.ElementAt(i);
+                    }
                 }
 
             }
