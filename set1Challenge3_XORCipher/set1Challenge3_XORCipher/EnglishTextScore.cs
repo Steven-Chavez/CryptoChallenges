@@ -79,6 +79,15 @@ namespace set1Challenge3_XORCipher
 
         /// <summary>
         /// Default constructor for EnglishTextScore 
+        /// class
+        /// </summary>
+        public EnglishTextScore()
+        {
+            this.message = "";
+        }
+
+        /// <summary>
+        /// Overloaded constructor for EnglishTextScore 
         /// class. Takes in message as argument.
         /// </summary>
         /// <param name="message">string</param>
@@ -101,6 +110,21 @@ namespace set1Challenge3_XORCipher
         public double getScore()
         {
             return score;
+        }
+
+        /// <summary>
+        /// score message
+        /// </summary>
+        /// <param name="message">message</param>
+        public void scoreMessage(string message)
+        {
+            this.message = message;
+
+            // Call appropriate methods
+            messageSort();
+            charCounter();
+            messageFrequency();
+            scoreMessage();
         }
 
         /// <summary>
