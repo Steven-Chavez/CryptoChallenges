@@ -18,9 +18,8 @@ namespace set1Challenge3_XORCipher
     {
         static void Main(string[] args)
         {
-            string test = "Scores a piece of English plain text. Used to score how successful a decrypted message was. " +
-                          "The method used to score the English plain text is done by character frequency.";
-            EnglishTextScore score = new EnglishTextScore(test);
+            string hexEncodedStr = "1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736";
+            DiscoverSingleCharacterKey key = new DiscoverSingleCharacterKey(hexEncodedStr);
         }
     }
 }
