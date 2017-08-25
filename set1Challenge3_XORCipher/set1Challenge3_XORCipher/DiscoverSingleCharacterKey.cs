@@ -122,6 +122,12 @@ namespace set1Challenge3_XORCipher
         {
             byte conversion = Convert.ToByte(Convert.ToInt32(hexPair, 16));
             string rawByte = Convert.ToString(conversion, 2);
+            
+            // Ensure raw byte string is 8 character in length
+            if (rawByte.Length < 8)
+            {
+                rawByte = rawByte.PadLeft(8, '0');
+            }
 
             return rawByte;
         }
