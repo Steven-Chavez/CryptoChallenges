@@ -27,6 +27,14 @@ namespace set1Challenge3_XORCipher
         /// Contains array of hex pairs
         /// </summary>
         private string[] twoDigitHexValueSeperation;
+        /// <summary>
+        /// Contains each letter of the alphabet A-Z
+        /// </summary>
+        private char[] alphabet = new char[26]
+            {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
+             'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
+             'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X',
+             'Y', 'Z'};
 
         /// <summary>
         /// Default constructor for DiscoverSingleCharacterKey
