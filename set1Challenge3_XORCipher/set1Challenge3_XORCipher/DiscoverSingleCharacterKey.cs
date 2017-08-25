@@ -121,6 +121,7 @@ namespace set1Challenge3_XORCipher
             return rawByte;
         }
 
+        private string charToRawByte(char letter)
         {
             // Convert letter to int
             int test = Convert.ToInt32(letter);
