@@ -30,7 +30,11 @@ namespace set1Challenge3_XORCipher
         /// <summary>
         /// Scores each decoded message
         /// </summary>
-        private EnglishTextScore score;
+        private EnglishTextScore score = new EnglishTextScore();
+        /// <summary>
+        /// Container for scored messages
+        /// </summary>
+        private ScoredMessage[] scoredMessages; 
         /// <summary>
         /// Contains each letter of the alphabet A-Z
         /// </summary>
