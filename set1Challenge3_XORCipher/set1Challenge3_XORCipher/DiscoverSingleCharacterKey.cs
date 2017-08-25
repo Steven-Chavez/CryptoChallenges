@@ -121,6 +121,11 @@ namespace set1Challenge3_XORCipher
             return rawByte;
         }
 
+        /// <summary>
+        /// Takes char value and converts into raw byte for encoding.
+        /// </summary>
+        /// <param name="letter">Char to be converted</param>
+        /// <returns>String of raw byte</returns>
         private string charToRawByte(char letter)
         {
             // Convert letter to int
