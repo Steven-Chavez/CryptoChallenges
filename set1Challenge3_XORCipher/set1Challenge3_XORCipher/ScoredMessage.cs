@@ -32,6 +32,16 @@ namespace set1Challenge3_XORCipher
         private string message;
 
         /// <summary>
+        /// Default constructor
+        /// </summary>
+        public ScoredMessage()
+        {
+            Key = ' ';
+            Score = 0.0;
+            Message = "";
+        }
+
+        /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="key">char</param>
