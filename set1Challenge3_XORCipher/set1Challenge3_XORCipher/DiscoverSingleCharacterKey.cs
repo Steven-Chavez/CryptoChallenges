@@ -94,9 +94,15 @@ namespace set1Challenge3_XORCipher
         {
             byte[] conversion = new byte[twoDigitHexValueSeperation.Length];
             
-            foreach(string value in twoDigitHexValueSeperation)
+            // loop through each char in alphabet 
+            foreach(char c in alphabet)
             {
+                // loop through each hexPair and decode message with single
+                // char from alphabet.
+                foreach(string hexPair in twoDigitHexValueSeperation)
+                {
 
+                }
             }
         }
 
