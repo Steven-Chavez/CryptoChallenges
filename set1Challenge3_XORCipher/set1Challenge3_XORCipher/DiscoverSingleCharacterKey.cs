@@ -147,12 +147,15 @@ namespace set1Challenge3_XORCipher
             string hexRawByte = "";
             string[] decodedByte = new string[8];
             string decodedMessage = "";
+            int index = 0;
             ScoredMessage score = new ScoredMessage();
 
             // loop through each hexPair and decode message with single
             // char from alphabet.
             foreach (string hexPair in twoDigitHexValueSeperation)
             {
+                int decodedDecimal = 0;
+
                 // Convert hexPair into raw byte
                 hexRawByte = hexToRawByte(hexPair);
 
@@ -179,7 +182,11 @@ namespace set1Challenge3_XORCipher
                         decodedByte[i] += letterRawByte.ElementAt(i);
                     }
                 }
-                
+
+                // Convert decoded byte to string and add to decoded message.
+                decodedDecimal = Convert.ToInt32((decodedByte[index]), 2);
+                decodedMessage += decodedDecimal.ToString("X");
+                index++;
             }
 
             return score;
