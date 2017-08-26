@@ -102,5 +102,12 @@ namespace set1Challenge3_XORCipher
             }
         }
 
+        public override string ToString()
+        {
+            string sum = null;
+
+            return sum;  
+        }
+
     }
 }
