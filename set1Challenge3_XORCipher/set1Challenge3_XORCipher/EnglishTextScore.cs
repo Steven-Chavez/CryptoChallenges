@@ -116,7 +116,7 @@ namespace set1Challenge3_XORCipher
         /// score message
         /// </summary>
         /// <param name="message">message</param>
-        public void scoreMessage(string message)
+        public double scoreMessage(string message)
         {
             this.message = message;
 
@@ -125,6 +125,8 @@ namespace set1Challenge3_XORCipher
             charCounter();
             messageFrequency();
             scoreMessage();
+
+            return score;
         }
 
         /// <summary>
