@@ -56,6 +56,7 @@ namespace set1Challenge3_XORCipher
             //assign values to the array
             for(int i = 0; i < scoredMessages.Length; i++)
             {
+                scoredMessages[i] = new ScoredMessage();
             }
 
             twoDigitHexValueSeperation = separateHexValueIntoPairs(message);
