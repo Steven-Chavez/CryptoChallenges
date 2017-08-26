@@ -105,6 +105,9 @@ namespace set1Challenge3_XORCipher
         public override string ToString()
         {
             string sum = null;
+            sum = "Message: " + Message + "/n" +
+                  "Key: " + Key + "/n" +
+                  "Score: " + Score + "/n";
 
             return sum;  
         }
