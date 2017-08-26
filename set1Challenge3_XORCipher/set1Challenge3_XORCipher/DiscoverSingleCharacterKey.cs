@@ -103,7 +103,7 @@ namespace set1Challenge3_XORCipher
                 letterRawByte = charToRawByte(c);
 
                 // Decode the message by each letter
-                scoredMessages[index] = decodeXORMessage(letterRawByte);
+                scoredMessages[index] = decodeXORMessage(letterRawByte, c);
                 index++;
             }
         }
@@ -142,13 +142,13 @@ namespace set1Challenge3_XORCipher
             return hexToRawByte(hex);
         }
 
-        private ScoredMessage decodeXORMessage(string letterRawByte)
+        private ScoredMessage decodeXORMessage(string letterRawByte, char key)
         {
             string hexRawByte = "";
             string[] decodedByte = new string[8];
             string decodedMessage = "";
             int index = 0;
-            ScoredMessage score = new ScoredMessage();
+            ScoredMessage sMsg = new ScoredMessage();
 
             // loop through each hexPair and decode message with single
             // char from alphabet.
@@ -189,7 +189,12 @@ namespace set1Challenge3_XORCipher
                 index++;
             }
 
-            return score;
+            // Populate ScoredMessage obj
+            sMsg.Message = decodedMessage;
+            sMsg.Score = score.scoreMessage(decodedMessage);
+            sMsg.Key = key;
+
+            return sMsg;
         }
     }
 }
