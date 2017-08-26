@@ -34,7 +34,7 @@ namespace set1Challenge3_XORCipher
         /// <summary>
         /// Container for scored messages
         /// </summary>
-        private ScoredMessage[] scoredMessages; 
+        private ScoredMessage[] scoredMessages = new ScoredMessage[26]; 
         /// <summary>
         /// Contains each letter of the alphabet A-Z
         /// </summary>
@@ -52,6 +52,12 @@ namespace set1Challenge3_XORCipher
         public DiscoverSingleCharacterKey(string message)
         {
             this.message = message;
+
+            //assign values to the array
+            for(int i = 0; i < scoredMessages.Length; i++)
+            {
+            }
+
             twoDigitHexValueSeperation = separateHexValueIntoPairs(message);
             decipherMsgXOR();
         }
@@ -94,6 +100,7 @@ namespace set1Challenge3_XORCipher
         {
             string letterRawByte = "";
             int index = 0;
+
             // loop through each char in alphabet 
             foreach(char c in alphabet)
             {
@@ -102,6 +109,7 @@ namespace set1Challenge3_XORCipher
 
                 // Decode the message by each letter
                 scoredMessages[index] = decodeXORMessage(letterRawByte);
+                index++;
             }
         }
 
@@ -144,6 +152,7 @@ namespace set1Challenge3_XORCipher
             string hexRawByte = "";
             string[] decodedByte = new string[8];
             string decodedMessage = "";
+            ScoredMessage score = new ScoredMessage();
 
             // loop through each hexPair and decode message with single
             // char from alphabet.
@@ -152,8 +161,11 @@ namespace set1Challenge3_XORCipher
                 // Convert hexPair into raw byte
                 hexRawByte = hexToRawByte(hexPair);
 
+                // Loop through each bit in byte to decode message
                 for(int i = 0; i < 8; i++)
                 {
+                    // If the encoded bit is 1 the decoded bit is the opposite
+                    // of the letter bit. 
                     if (hexRawByte.ElementAt(i) == '1')
                     {
                         if (letterRawByte.ElementAt(i) == '1')
@@ -164,16 +176,18 @@ namespace set1Challenge3_XORCipher
                         {
                             decodedByte[i] += "1";
                         }
+                    // If the encoded bit is 0 the decoded bit is the same as
+                    // the letter bit.
                     }
                     else
                     {
                         decodedByte[i] += letterRawByte.ElementAt(i);
                     }
                 }
-
+                
             }
 
-            return;
+            return score;
         }
     }
 }
