@@ -63,12 +63,6 @@ namespace set1Challenge3_XORCipher
             decipherMsgXOR();
         }
 
-        // loop
-        // run one character (97-122) against encoded string at a time
-        // decode using raw bytes
-        // score decoded message
-        // Display top five
-
         /// <summary>
         /// Separate hexadecimal string into an array by pairs.
         /// Making the hexadecimal value easy to do work on.
