@@ -196,7 +196,7 @@ namespace set1Challenge3_XORCipher
 
                 // Convert decoded byte to string and add to decoded message.
                 decodedDecimal = Convert.ToInt32((decodedByte[i]), 2);
-                decodedMessage += decodedDecimal.ToString("X");
+                decodedMessage += Convert.ToChar(decodedDecimal);
             }
 
             // Populate ScoredMessage obj
