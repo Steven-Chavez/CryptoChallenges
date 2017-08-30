@@ -149,7 +149,14 @@ namespace set1Challenge3_XORCipher
 
         private ScoredMessage decodeXORMessage(string letterRawByte, char key)
         {
-            
+            //Local variables
+            string hexRawByte = "";
+            string[] decodedByte = new string[8];
+            string decodedMessage = "";
+            int index = 0;
+            ScoredMessage sMsg = new ScoredMessage();
+
+
         }
     }
 }
