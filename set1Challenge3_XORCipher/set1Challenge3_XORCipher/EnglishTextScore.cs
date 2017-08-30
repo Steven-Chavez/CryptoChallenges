@@ -170,7 +170,11 @@ namespace set1Challenge3_XORCipher
                 // until a match is found.
                 while (found == true)
                 {
-                    if(messageSplit[i] == alphabet[index])
+                    if(index == 26)
+                    {
+                        found = true;
+                    }
+                    else if(messageSplit[i] == alphabet[index])
                     {
                         charCount[index]++;
                         found = false;
