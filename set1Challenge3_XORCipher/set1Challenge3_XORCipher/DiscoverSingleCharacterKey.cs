@@ -157,8 +157,7 @@ namespace set1Challenge3_XORCipher
         {
             //Local variables
             string[] decodedByte = new string[rawByteHexPair.Length];
-            string decodedMessage = "";
-            int index = 0;
+            string decodedHexMessage = "";
             ScoredMessage sMsg = new ScoredMessage();
 
             // loop through each hexPair and decode message with single
@@ -192,12 +191,15 @@ namespace set1Challenge3_XORCipher
 
                 // Convert decoded byte to string and add to decoded message.
                 decodedDecimal = Convert.ToInt32((decodedByte[i]), 2);
-                decodedMessage += decodedDecimal.ToString("X");
+                decodedHexMessage += decodedDecimal.ToString("X");
             }
 
+            // Populate ScoredMessage obj
+            sMsg.Message = decodedHexMessage;
+            sMsg.Score = score.scoreMessage(decodedHexMessage);
+            sMsg.Key = key;
 
-
-            return null;
+            return sMsg;
         }
     }
 }
