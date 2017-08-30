@@ -156,18 +156,46 @@ namespace set1Challenge3_XORCipher
         private ScoredMessage decodeXORMessage(string letterRawByte, char key)
         {
             //Local variables
-            string hexRawByte = "";
-            string[] decodedByte = new string[8];
+            string[] decodedByte = new string[rawByteHexPair.Length];
             string decodedMessage = "";
             int index = 0;
             ScoredMessage sMsg = new ScoredMessage();
 
             // loop through each hexPair and decode message with single
             // char from alphabet.
-            for (int i = 0; i < twoDigitHexValueSeperation.Length; i++)
+            for (int i = 0; i < rawByteHexPair.Length; i++)
             {
-                hexRawByte = hexToRawByte(twoDigitHexValueSeperation[i]);
+                int decodedDecimal = 0;
+
+                for (int j = 0; j < 8; j++)
+                {
+                    // If the encoded bit is 1 the decoded bit is the opposite
+                    // of the letter bit. 
+                    if (rawByteHexPair[i].ElementAt(j) == '1')
+                    {
+                        if (letterRawByte.ElementAt(j) == '1')
+                        {
+                            decodedByte[i] += "0";
+                        }
+                        else
+                        {
+                            decodedByte[i] += "1";
+                        }
+                        // If the encoded bit is 0 the decoded bit is the same as
+                        // the letter bit.
+                    }
+                    else
+                    {
+                        decodedByte[i] += letterRawByte.ElementAt(j);
+                    }
+                }
+
+                // Convert decoded byte to string and add to decoded message.
+                decodedDecimal = Convert.ToInt32((decodedByte[i]), 2);
+                decodedMessage += decodedDecimal.ToString("X");
             }
+
+
 
             return null;
         }
