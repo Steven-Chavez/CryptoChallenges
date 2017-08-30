@@ -157,8 +157,12 @@ namespace set1Challenge3_XORCipher
         {
             //Local variables
             string[] decodedByte = new string[rawByteHexPair.Length];
-            string decodedHexMessage = "";
+            string decodedMessage = "";
             ScoredMessage sMsg = new ScoredMessage();
+
+            Console.WriteLine(rawByteHexPair.Length);
+            Console.WriteLine(twoDigitHexValueSeperation.Length);
+            Console.WriteLine(decodedByte.Length);
 
             // loop through each hexPair and decode message with single
             // char from alphabet.
@@ -180,9 +184,10 @@ namespace set1Challenge3_XORCipher
                         {
                             decodedByte[i] += "1";
                         }
-                        // If the encoded bit is 0 the decoded bit is the same as
-                        // the letter bit.
+                        
                     }
+                    // If the encoded bit is 0 the decoded bit is the same as
+                    // the letter bit.
                     else
                     {
                         decodedByte[i] += letterRawByte.ElementAt(j);
@@ -191,12 +196,12 @@ namespace set1Challenge3_XORCipher
 
                 // Convert decoded byte to string and add to decoded message.
                 decodedDecimal = Convert.ToInt32((decodedByte[i]), 2);
-                decodedHexMessage += decodedDecimal.ToString("X");
+                decodedMessage += decodedDecimal.ToString("X");
             }
 
             // Populate ScoredMessage obj
-            sMsg.Message = decodedHexMessage;
-            sMsg.Score = score.scoreMessage(decodedHexMessage);
+            sMsg.Message = decodedMessage;
+            sMsg.Score = score.scoreMessage(decodedMessage);
             sMsg.Key = key;
 
             return sMsg;
