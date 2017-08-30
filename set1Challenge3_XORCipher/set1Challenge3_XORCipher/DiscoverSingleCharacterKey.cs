@@ -89,22 +89,27 @@ namespace set1Challenge3_XORCipher
         }
 
         /// <summary>
-        /// decipher message using alphabet and XOR logic
+        /// decipher message using alphabet and XOR logic.
         /// </summary>
         private void decipherMsgXOR()
         {
             string letterRawByte = "";
             int index = 0;
 
-            // loop through each char in alphabet 
+            // Loop through each char in alphabet. 
             foreach(char c in alphabet)
             {
                 // Convert char to raw byte.
                 letterRawByte = charToRawByte(c);
 
-                // Decode the message by each letter
+                // Decode the message by each letter.
                 scoredMessages[index] = decodeXORMessage(letterRawByte, c);
                 index++;
+            }
+
+            foreach(ScoredMessage value in scoredMessages)
+            {
+                Console.WriteLine(value.ToString());
             }
         }
 
@@ -144,57 +149,7 @@ namespace set1Challenge3_XORCipher
 
         private ScoredMessage decodeXORMessage(string letterRawByte, char key)
         {
-            string hexRawByte = "";
-            string[] decodedByte = new string[8];
-            string decodedMessage = "";
-            int index = 0;
-            ScoredMessage sMsg = new ScoredMessage();
-
-            // loop through each hexPair and decode message with single
-            // char from alphabet.
-            foreach (string hexPair in twoDigitHexValueSeperation)
-            {
-                int decodedDecimal = 0;
-
-                // Convert hexPair into raw byte
-                hexRawByte = hexToRawByte(hexPair);
-
-                // Loop through each bit in byte to decode message
-                for(int i = 0; i < 8; i++)
-                {
-                    // If the encoded bit is 1 the decoded bit is the opposite
-                    // of the letter bit. 
-                    if (hexRawByte.ElementAt(i) == '1')
-                    {
-                        if (letterRawByte.ElementAt(i) == '1')
-                        {
-                            decodedByte[i] += "0";
-                        }
-                        else
-                        {
-                            decodedByte[i] += "1";
-                        }
-                    // If the encoded bit is 0 the decoded bit is the same as
-                    // the letter bit.
-                    }
-                    else
-                    {
-                        decodedByte[i] += letterRawByte.ElementAt(i);
-                    }
-                }
-
-                // Convert decoded byte to string and add to decoded message.
-                decodedDecimal = Convert.ToInt32((decodedByte[index]), 2);
-                decodedMessage += decodedDecimal.ToString("X");
-                index++;
-            }
-
-            // Populate ScoredMessage obj
-            sMsg.Message = decodedMessage;
-            sMsg.Score = score.scoreMessage(decodedMessage);
-            sMsg.Key = key;
-
-            return sMsg;
+            
         }
     }
 }
