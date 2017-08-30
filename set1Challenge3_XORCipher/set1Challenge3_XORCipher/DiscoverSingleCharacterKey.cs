@@ -156,7 +156,12 @@ namespace set1Challenge3_XORCipher
             int index = 0;
             ScoredMessage sMsg = new ScoredMessage();
 
+            // loop through each hexPair and decode message with single
+            // char from alphabet.
+            for (int i = 0; i < twoDigitHexValueSeperation.Length; i++)
+            {
 
+            }
         }
     }
 }
