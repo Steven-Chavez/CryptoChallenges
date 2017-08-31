@@ -64,7 +64,7 @@ namespace set1Challenge3_XORCipher
             }
 
             twoDigitHexValueSeperation = separateHexValueIntoPairs(message);
-            decipherMsgXOR();
+            decodeXORMessage();
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace set1Challenge3_XORCipher
         /// <summary>
         /// decipher message using alphabet and XOR logic.
         /// </summary>
-        private void decipherMsgXOR()
+        private void decodeXORMessage()
         {
             rawByteHexPair = new string[twoDigitHexValueSeperation.Length];
             string letterRawByte = "";
@@ -114,7 +114,7 @@ namespace set1Challenge3_XORCipher
                 letterRawByte = charToRawByte(c);
 
                 // Decode the message by each letter.
-                scoredMessages[index] = decodeXORMessage(letterRawByte, c);
+                scoredMessages[index] = decodeXORCalc(letterRawByte, c);
                 index++;
             }
         }
@@ -153,7 +153,13 @@ namespace set1Challenge3_XORCipher
             return hexToRawByte(hex);
         }
 
-        private ScoredMessage decodeXORMessage(string letterRawByte, char key)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="letterRawByte"></param>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        private ScoredMessage decodeXORCalc(string letterRawByte, char key)
         {
             //Local variables
             string[] decodedByte = new string[rawByteHexPair.Length];
