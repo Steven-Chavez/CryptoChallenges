@@ -154,6 +154,17 @@ namespace set1Challenge3_XORCipher
         }
 
         /// <summary>
+        /// Orders decoded messages by their scores and selects
+        /// top five most likely candidates based on character
+        /// frequency.
+        /// </summary>
+        /// <returns>array of top 5 scored messages</returns>
+        private ScoredMessage[] getTopFive()
+        {
+            return null;
+        }
+
+        /// <summary>
         /// Decodes the XOR'd hex string against each letter in the
         /// alphabet. 
         /// </summary>
