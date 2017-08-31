@@ -160,10 +160,6 @@ namespace set1Challenge3_XORCipher
             string decodedMessage = "";
             ScoredMessage sMsg = new ScoredMessage();
 
-            Console.WriteLine(rawByteHexPair.Length);
-            Console.WriteLine(twoDigitHexValueSeperation.Length);
-            Console.WriteLine(decodedByte.Length);
-
             // loop through each hexPair and decode message with single
             // char from alphabet.
             for (int i = 0; i < rawByteHexPair.Length; i++)
@@ -184,7 +180,6 @@ namespace set1Challenge3_XORCipher
                         {
                             decodedByte[i] += "1";
                         }
-                        
                     }
                     // If the encoded bit is 0 the decoded bit is the same as
                     // the letter bit.
