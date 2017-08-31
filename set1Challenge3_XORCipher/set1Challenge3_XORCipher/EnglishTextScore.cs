@@ -172,7 +172,8 @@ namespace set1Challenge3_XORCipher
                 {
                     if(index == 26)
                     {
-                        found = true;
+                        found = false;
+                        index = 0;
                     }
                     else if(messageSplit[i] == alphabet[index])
                     {
