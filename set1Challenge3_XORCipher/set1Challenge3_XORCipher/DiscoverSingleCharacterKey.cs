@@ -154,11 +154,12 @@ namespace set1Challenge3_XORCipher
         }
 
         /// <summary>
-        /// 
+        /// Decodes the XOR'd hex string against each letter in the
+        /// alphabet. 
         /// </summary>
-        /// <param name="letterRawByte"></param>
-        /// <param name="key"></param>
-        /// <returns></returns>
+        /// <param name="letterRawByte">Raw byte representation of letter</param>
+        /// <param name="key">char representation of letter</param>
+        /// <returns>Scored Message object with decoded data</returns>
         private ScoredMessage decodeXORCalc(string letterRawByte, char key)
         {
             //Local variables
