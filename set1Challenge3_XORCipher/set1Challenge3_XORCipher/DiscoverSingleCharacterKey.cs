@@ -163,7 +163,13 @@ namespace set1Challenge3_XORCipher
         {
             // Initialize ScoredMessage object topFive
             ScoredMessage[] topFive = new ScoredMessage[5];
-            
+
+            // Populate array.
+            for (int i = 0; i < topFive.Length; i++)
+            {
+                topFive[i] = new ScoredMessage();
+            }
+
             return null;
         }
 
