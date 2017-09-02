@@ -14,7 +14,7 @@ namespace set1Challenge3_XORCipher
     /// 
     /// Container for scored messages
     /// </summary>
-    class ScoredMessage
+    class ScoredMessage : IComparable
     {
         /// <summary>
         /// Contains key used to decode message.
@@ -112,5 +112,15 @@ namespace set1Challenge3_XORCipher
             return sum;  
         }
 
+        public int CompareTo(object obj)
+        {
+            if (obj is ScoredMessage)
+            {
+                ScoredMessage sMsg = (ScoredMessage)obj;
+                return Score.CompareTo(sMsg.Score);
+            }
+            else
+            throw new NotImplementedException();
+        }
     }
 }
