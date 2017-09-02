@@ -28,8 +28,10 @@ namespace set1Challenge3_XORCipher
                 decodedTopFiveResults[i] = new ScoredMessage();
             }
 
+            // Pass hexEncodedStr to DiscoverSingleCharacterKey object for decoding
             DiscoverSingleCharacterKey key = new DiscoverSingleCharacterKey(hexEncodedStr);
             
+
             
         }
     }
