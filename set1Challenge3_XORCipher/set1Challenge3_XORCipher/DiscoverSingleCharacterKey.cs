@@ -159,16 +159,10 @@ namespace set1Challenge3_XORCipher
         /// frequency.
         /// </summary>
         /// <returns>array of top 5 scored messages</returns>
-        private ScoredMessage[] getTopFive()
+        public ScoredMessage[] getTopFive()
         {
             // Initialize ScoredMessage object topFive
             ScoredMessage[] topFive = new ScoredMessage[5];
-
-            // Populate array.
-            for (int i = 0; i < topFive.Length; i++)
-            {
-                topFive[i] = new ScoredMessage();
-            }
 
             return null;
         }
