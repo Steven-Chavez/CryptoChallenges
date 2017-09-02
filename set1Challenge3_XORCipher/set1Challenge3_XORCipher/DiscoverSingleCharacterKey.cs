@@ -173,6 +173,9 @@ namespace set1Challenge3_XORCipher
                 msgArray.Add(value);
             }
 
+            // Sort message array.
+            msgArray.Sort();
+
             return null;
         }
 
