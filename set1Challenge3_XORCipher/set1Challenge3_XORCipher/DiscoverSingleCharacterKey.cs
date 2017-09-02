@@ -165,6 +165,7 @@ namespace set1Challenge3_XORCipher
             // Initialize ScoredMessage object topFive
             ScoredMessage[] topFive = new ScoredMessage[5];
             ArrayList msgArray = new ArrayList();
+            int index = 25;
 
             return null;
         }
