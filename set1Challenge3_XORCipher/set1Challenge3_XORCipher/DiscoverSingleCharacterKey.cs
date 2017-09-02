@@ -167,6 +167,12 @@ namespace set1Challenge3_XORCipher
             ArrayList msgArray = new ArrayList();
             int index = 25;
 
+            // Add objects from scoredMessages to msgArray
+            foreach (ScoredMessage value in scoredMessages)
+            {
+                msgArray.Add(value);
+            }
+
             return null;
         }
 
