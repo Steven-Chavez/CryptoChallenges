@@ -183,7 +183,7 @@ namespace set1Challenge3_XORCipher
                 index--;
             }
 
-            return null;
+            return topFive;
         }
 
         /// <summary>
