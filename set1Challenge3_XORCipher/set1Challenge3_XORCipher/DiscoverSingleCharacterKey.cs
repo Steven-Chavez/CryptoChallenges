@@ -176,6 +176,13 @@ namespace set1Challenge3_XORCipher
             // Sort message array.
             msgArray.Sort();
 
+            // Populate top five ScoredMessage array.
+            for (int i = 0; i < topFive.Length; i++)
+            {
+                topFive[i] = (ScoredMessage)msgArray[index];
+                index--;
+            }
+
             return null;
         }
 
