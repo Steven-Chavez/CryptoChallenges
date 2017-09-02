@@ -34,9 +34,11 @@ namespace set1Challenge3_XORCipher
             // Get top five decoded results
             decodedTopFiveResults = key.getTopFive();
 
-
-
-            
+            // Display top five decoded results
+            for (int i = 0; i < decodedTopFiveResults.Length; i++)
+            {
+                Console.WriteLine(decodedTopFiveResults[i].ToString());
+            }
         }
     }
 }
