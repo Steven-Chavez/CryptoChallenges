@@ -30,7 +30,11 @@ namespace set1Challenge3_XORCipher
 
             // Pass hexEncodedStr to DiscoverSingleCharacterKey object for decoding
             DiscoverSingleCharacterKey key = new DiscoverSingleCharacterKey(hexEncodedStr);
-            
+
+            // Get top five decoded results
+            decodedTopFiveResults = key.getTopFive();
+
+
 
             
         }
